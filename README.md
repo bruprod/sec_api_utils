@@ -110,6 +110,12 @@ goodwill_filings: SECBaseMeasure = data_msft.get_measure_info("Goodwill")
 yearly_goodwill = goodwill_filings.get_by_form_type("10-K")
 ```
 
+## Data Analytics
+
+The data analytics part of the package provides some simple methods for analyzing the data retrieved from the SEC-API or
+data from stocks, which were retrieved from other sources. Currently, the data analytics part provides a fair value
+calculator and a monte carlo sampler for the stock price based on a given gaussian distribution.
+
 ## Plotting
 
 For fast visualization of the datapoints a simple plotting function, which plots the data

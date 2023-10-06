@@ -47,7 +47,8 @@ class SECUnitPlotter:
 
     def plot_sec_units_base(self, sec_units: List[SECUnits], kind: str = "bar",
                             number_format: NumberFormat = None,
-                            auto_number_format: bool = True, title: str = None):
+                            auto_number_format: bool = True, title: str = None,
+                            show_plot: bool = True):
         """
         Base functionality for plotting a list of SECUnit entries
         :param title: The title of the plot
@@ -56,6 +57,7 @@ class SECUnitPlotter:
         :param number_format: The number format to use for displaying the y-values
         :param kind: The kind of plot either bar or line chart
         :param sec_units: The list of SECUnits to plot
+        :param show_plot: Whether to show the plot or not
         """
         sec_units_ordered = sorted(sec_units, key=lambda x: x.end)
 
@@ -84,4 +86,6 @@ class SECUnitPlotter:
         plt.ticklabel_format(style='plain', axis='y')
         if title is not None:
             plt.title(title)
-        plt.show()
+
+        if show_plot:
+            plt.show()
